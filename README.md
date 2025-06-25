@@ -52,6 +52,7 @@ pio.renderers.default = "browser"
 fig3.show()
 ```
 
+<img src="images/world_data_table.png" alt="Plot" width="80%"/>
 
 
 
