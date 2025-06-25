@@ -1,5 +1,5 @@
 # COVID-19-deaths
-Plotly bar charts and world graphs are used in this project to analyse global COVID-19 data from 2020. Finding the number of deaths per 100,000 people is one method of assessing the impact of COVID-19 on a country in 2020. **_[View worldometer_coronavirus_summary_data.csv](worldometer_coronavirus_summary_data.csv)_**
+Plotly bar charts and world graphs are used in this project to analyse global COVID-19 data from 2020. Finding the number of deaths per 100,000 people is one method of assessing the impact of COVID-19 on a country in 2020. **_[View worldometer_coronavirus_summary_data.csv](data-and-code/worldometer_coronavirus_summary_data.csv)_**
 
 ```math
 \frac{total\_deaths}{population} \times 100,000
@@ -52,9 +52,39 @@ pio.renderers.default = "browser"
 fig3.show()
 ```
 
-<img src="images/world_data_table.png" alt="Plot" width="80%"/>
+<img src="images/world_data_table.png" alt="Plot" width="70%"/>
+The total number of deaths per 100,000 persons in every country can be determined using this data. The data frame is then updated with this value, and a global map is produced.  The colour gradient shows the COVID-19 outbreak per country in terms of fatalities.
 
+```python
+#calculate total deaths per 100,000 in each country and display as colored map 
+per = []
+for i in range(0,226,1):
+    result = (newData.iloc[i,1] / newData.iloc[i,2]) * 100000
+    per.append(result)
+perarray = np.array(per)
 
+newData1 = pd.DataFrame({'Country': countryname,'Total deaths': deaths, 'Population': population, 'Death per 100,000': perarray})
 
+fig = px.choropleth(
+    newData1,
+    locations="Country",
+    locationmode="country names",         
+    color="Death per 100,000",              
+    hover_name="Country",           
+    color_continuous_scale="Reds", 
+    title="Covid 19 deaths per 100,000 by country 2020",
+    scope="world",                
+    projection="natural earth"
+)
 
+fig.update_layout(
+    geo=dict(showframe=False, showcoastlines=True),
+    margin=dict(l=0, r=0, t=50, b=0)
+)
+
+pio.renderers.default = "browser"
+fig.show()
+```
+
+<img src="images/world_data_map.png" alt="Plot" width="70%"/>
 
