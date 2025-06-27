@@ -87,4 +87,38 @@ fig.show()
 ```
 
 <img src="images/world_data_map.png" alt="Plot" width="70%"/>
+According to the map, South America had the highest number of COVID-19 deaths per 100,000 persons in 2020. The country most impacted was Peru. A bar chart of COVID-19 deaths by South American countries is made by zoning into this area.
 
+```python
+#bar graph of COVID-19 fatality data in South America 
+Data1 = Data[Data["continent"] == 'South America']
+
+countries1 = Data1["country"].unique()
+countryname1 = []
+death = []
+popu = []
+
+for country in countries1:
+    currentcountry = Data1[(Data1['country'] == country)]
+    countryname1.append(country)
+    death.append(currentcountry['total_deaths'].sum())
+    popu.append(currentcountry['population'].sum())
+
+newData2 = pd.DataFrame({'Country': countryname1, 'Total Deaths': death, 'Population': popu})
+
+perr = []
+for i in range(0,14,1):
+    result = (newData2.iloc[i,1] / newData2.iloc[i,2]) * 100000
+    perr.append(result)
+perrarray = np.array(perr)
+
+newData3 = pd.DataFrame({'Country': countryname1,'Death per 100,000': perrarray})
+
+fig1 = px.bar(newData3, y='Death per 100,000', x='Country', text_auto='.2s',
+            title="Total Deaths per 100,000 due to COVID 19 in South America")
+fig1.update_traces(textfont_size=12, textangle=0, textposition="outside", cliponaxis=False)
+pio.renderers.default = "browser"
+fig1.show()
+```
+
+<img src="images/south_america_bar.png" alt="Plot" width="70%"/>
