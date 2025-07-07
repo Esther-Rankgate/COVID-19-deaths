@@ -122,3 +122,10 @@ fig1.show()
 ```
 
 <img src="images/south_america_bar.png" alt="Plot" width="70%"/>
+
+## COVID-19 in Peru 
+In 2020, Peru had more COVID-19 deaths per 100,000 inhabitants than any other country in the world. The country was placed under extreme lockdown as soon as the first case began on March 6, 2020. But the virus continued to spread throughout the nation and by December 31, 2021, there were 1,017,119 confirmed cases and 37,724 fatalities. Lack of hospitalisation and intensive care unit beds as a result of low healthcare investment rates may have contributed to an increase in deaths. There are roughly five intensive care unit beds for every 100,000 people in Peru, and there is a severe shortage of qualified medical personnel in the ICU.
+
+- https://pmc.ncbi.nlm.nih.gov/articles/PMC8045664/
+- https://www.unicef.org/media/92111/file/UNICEF-Peru-COVID-19-Situation-Report-No.-10-End-of-year-2020.pdf
+
