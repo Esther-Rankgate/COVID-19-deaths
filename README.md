@@ -129,4 +129,4 @@ In 2020, Peru had more COVID-19 deaths per 100,000 inhabitants than any other co
 - https://pmc.ncbi.nlm.nih.gov/articles/PMC8045664/
 - https://www.unicef.org/media/92111/file/UNICEF-Peru-COVID-19-Situation-Report-No.-10-End-of-year-2020.pdf
 
-**_[View full python code](COVID.py)_**
+[**_[View full python code](data-and-code/COVID.py)_**]
