@@ -1,4 +1,4 @@
-# COVID-19-deaths
+# COVID-19-deaths in 2020
 Plotly bar charts and world graphs are used in this project to analyse global COVID-19 data from 2020. Finding the number of deaths per 100,000 people is one method of assessing the impact of COVID-19 on a country in 2020. **_[View worldometer_coronavirus_summary_data.csv](data-and-code/worldometer_coronavirus_summary_data.csv)_**
 
 ```math
