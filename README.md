@@ -130,7 +130,7 @@ fig1.show()
 <p align="center">
 <img src="images/south_america_bar.png" alt="Plot" width="100%"/>
 
-The bar chart shows that Peru had the highest death toll per 100,000 population in 2022. Further insights into the impact of COVID-19 in Peru can be gained by analyzing the trend in death cases from the start of the pandemic in 2020. 
+The bar chart shows that Peru had the highest death toll per 100,000 population in 2022. Further insights into the impact of COVID-19 in Peru can be gained by analyzing the trend in death cases from the start of the pandemic in 2020. **_[worldometer_coronavirus_daily_data.csv](data-and-code/worldometer_coronavirus_daily_data.csv)_**
 ```python
 # Daily data in Peru 
 File = pd.read_csv("worldometer_coronavirus_daily_data.csv")
