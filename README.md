@@ -132,7 +132,17 @@ fig1.show()
 
 The bar chart shows that Peru had the highest death toll per 100,000 population in 2022. Further insights into the impact of COVID-19 in Peru can be gained by analyzing the trend in death cases from the start of the pandemic in 2020. 
 ```python
+# Daily data in Peru 
+File = pd.read_csv("worldometer_coronavirus_daily_data.csv")
+splice = File.loc[(File['date'] >= '2020-2-15') & (File['date'] <= '2022-5-14')]
+PeruFiley = (((splice[splice['country'] == 'Peru'])[['daily_new_deaths']]).to_numpy()).flatten()
+PeruFilex = (((splice[splice['country'] == 'Peru'])[['date']]).to_numpy()).flatten()
+PeruFilex = pd.to_datetime(PeruFilex)
+newFile = pd.DataFrame({'Date': PeruFilex, 'Daily New Death': PeruFiley })
 
+fle = px.scatter(newFile, x="Date", y="Daily New Death", trendline="lowess", trendline_options=dict(frac=0.03),title="Daily New Deaths in Peru from 2020 to 2022")
+fle.show()
+```
 
 <p align="center">
 <img src="images/newplot (1).png" alt="Plot" width="100%"/>
