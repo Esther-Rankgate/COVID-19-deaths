@@ -1,17 +1,22 @@
-# COVID-19-deaths in 2020
-Finding the number of deaths per 100,000 people is one method of assessing the impact of COVID-19 on a country. Plotly bar charts and world graphs are used in this project to analyse global COVID-19 data from 2020. **_[View worldometer_coronavirus_summary_data.csv](data-and-code/worldometer_coronavirus_summary_data.csv)_** 
+# COVID-19-deaths
+
+## Objective
+The objective of this project is to quantitatively assess the global impact of COVID-19. One method of evaluating this impact is by analyzing the number of deaths per 100,000 people. Since the onset of the pandemic in 2020, COVID-19 has resulted in 27 million deaths worldwide by August 2024, placing immense strain on economies and healthcare systems. Throughout the pandemic, various political measures were implemented to control the spread and reduce the death toll, often supported by data-driven research. This project aims to provide a scientific foundation for future policy decisions that countries can adopt to better withstand future pandemics.
+
+## Method 
+Global COVID-19 total death data in May 2022, **_[worldometer_coronavirus_summary_data.csv](data-and-code/worldometer_coronavirus_summary_data.csv)_**, is analyzed using Python to identify the country most severely impacted by the pandemic, based on deaths per 100,000 population. Countries are ranked accordingly to highlight disparities in outcomes. A focused case study is then conducted on the most affected country to examine systemic weaknesses within its healthcare infrastructure and public health response. Based on these findings, policy recommendations are proposed to help other nations strengthen their preparedness and resilience, thereby mitigating the impact of future pandemics. 
 
 ```math
-\frac{total\_deaths}{population} \times 100,000
+death\_per\_100,000\_population = \frac{total\_deaths}{population} \times 100,000
 ```
 
-## Libraries Used 
+## The Code
+### Libraries Used
 ![Pandas](https://img.shields.io/badge/Pandas-150458?style=for-the-badge&logo=pandas&logoColor=white)
 ![NumPy](https://img.shields.io/badge/NumPy-013243?style=for-the-badge&logo=numpy&logoColor=white)
 ![Matplotlib](https://img.shields.io/badge/Matplotlib-11557c?style=for-the-badge&logo=matplotlib&logoColor=white)
 ![Plotly](https://img.shields.io/badge/Plotly-3F4F75?style=for-the-badge&logo=plotly&logoColor=white)
-
-## The Code 
+ 
 Importing the libraries used in this project. 
 ```python
 #import python modules
@@ -51,8 +56,9 @@ fig3 = go.Figure(data=[go.Table(
 pio.renderers.default = "browser"
 fig3.show()
 ```
+<p align="center">
+<img src="images/world_data_table.png" alt="Plot" width="100%"/>
 
-<img src="images/world_data_table.png" alt="Plot" width="70%"/>
 The total number of deaths per 100,000 persons in every country can be determined using this data. The data frame is then updated with this value, and a global map is produced.  The colour gradient shows the COVID-19 outbreak per country in terms of fatalities.
 
 ```python
@@ -85,9 +91,10 @@ fig.update_layout(
 pio.renderers.default = "browser"
 fig.show()
 ```
-
-<img src="images/world_data_map.png" alt="Plot" width="70%"/>
-According to the map, South America had the highest number of COVID-19 deaths per 100,000 persons in 2020. The country most impacted was Peru. A bar chart of COVID-19 deaths by South American countries is made by zoning into this area.
+<p align="center">
+<img src="images/newplot.png" alt="Plot" width="100%"/>
+    
+According to the map, South America had the highest number of COVID-19 deaths per 100,000 persons in 2022. A bar chart of COVID-19 deaths by South American countries is made by zoning into this area.
 
 ```python
 #bar graph of COVID-19 fatality data in South America 
@@ -120,12 +127,22 @@ fig1.update_traces(textfont_size=12, textangle=0, textposition="outside", clipon
 pio.renderers.default = "browser"
 fig1.show()
 ```
+<p align="center">
+<img src="images/south_america_bar.png" alt="Plot" width="100%"/>
 
-<img src="images/south_america_bar.png" alt="Plot" width="70%"/>
+The bar chart shows that Peru had the highest death toll per 100,000 population in 2022. Further insights into the impact of COVID-19 in Peru can be gained by analyzing the trend in death cases from the start of the pandemic in 2020. 
+```python
+
+
+<p align="center">
+<img src="images/newplot (1).png" alt="Plot" width="100%"/>
 
 ## COVID-19 in Peru 
-In 2020, Peru had more COVID-19 deaths per 100,000 inhabitants than any other country in the world. The country was placed under extreme lockdown as soon as the first case began on March 6, 2020. But the virus continued to spread throughout the nation and by December 31, 2020, there were 1,017,119 confirmed cases and 37,724 fatalities. Lack of hospitalisation and intensive care unit beds as a result of low healthcare investment rates may have contributed to an increase in deaths. There are roughly five intensive care unit beds for every 100,000 people in Peru, and there is a severe shortage of qualified medical personnel in the ICU.
+In 2022, Peru had more COVID-19 deaths per 100,000 inhabitants than any other country in the world. The country was placed under extreme lockdown as soon as the first case began on March 6, 2020. But the virus continued to spread throughout the nation and by December 31, 2020, there were 1,017,119 confirmed cases and 37,724 fatalities. Lack of hospitalisation and intensive care unit beds as a result of low healthcare investment rates may have contributed to an increase in deaths. There are roughly five intensive care unit beds for every 100,000 people in Peru, and there is a severe shortage of qualified medical personnel in the ICU.
 
+### References
+- https://ourworldindata.org/key-charts-understand-covid-pandemic
+- https://pmc.ncbi.nlm.nih.gov/articles/PMC10986737/
 - https://pmc.ncbi.nlm.nih.gov/articles/PMC8045664/
 - https://www.unicef.org/media/92111/file/UNICEF-Peru-COVID-19-Situation-Report-No.-10-End-of-year-2020.pdf
 
